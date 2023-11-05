@@ -1,0 +1,50 @@
+class Stack {
+  constructor() {
+    this.array = [];
+  }
+
+  push(element) {
+    if (this.array.length >= 10) {
+      throw 'Stack is crowded';
+    }
+    return this.array.push(element);
+  }
+
+  pop() {
+    if (this.array.length === 0) {
+      throw 'Stack is empty!';
+    } else {
+      let answer = this.array.pop();
+      return answer;
+    }
+  }
+
+  peek() {
+    if (this.array.length === 0) {
+      return null;
+    } else {
+      return this.array[this.array.length - 1];
+    }
+  }
+
+  isEmpty() {
+    if (this.array.length === 0) {
+      return "Stack is empty"
+    } else {
+      return "Stack is not empty!!"
+    }
+  }
+
+  toArray() {
+    return this.array;
+  }
+}
+
+let newStack = new Stack();
+console.log(newStack.push(1));
+console.log(newStack.push(2));
+console.log(newStack.push(3));
+console.log(newStack.pop());
+console.log(newStack.peek())
+console.log(newStack.isEmpty())
+console.log(newStack.toArray())
